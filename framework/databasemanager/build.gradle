@@ -1,8 +1,7 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -10,7 +9,6 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId "com.ppismarttech.animeapi_mvvm_clean"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -36,15 +34,10 @@ android {
 
 dependencies {
 
-    implementation project(":domain")
-    implementation project(":data")
-    implementation project(":usecases")
-
     implementation kotlinLib
     implementation coreKtxLib
     implementation appCompatLib
     implementation materialLib
-    implementation constrainLayoutLib
     testImplementation testJunitLib
     androidTestImplementation androidTestJunitLib
     androidTestImplementation testEspressoLib
@@ -52,8 +45,11 @@ dependencies {
     //RXJava
     implementation rxAndroidLib
     implementation rxJavaLIb
-    implementation rxRetrofitLib
     implementation rxRoomLib
+
+    //Room
+    kapt roomCompilerLib
+    implementation roomRuntimeLib
 
     //Hilt
     implementation daggerAndroidLib
@@ -62,10 +58,5 @@ dependencies {
     kaptAndroidTest daggerCompilerLib
     testImplementation daggerAndroidTestLib
     kaptTest daggerCompilerLib
-
-    //ViewModel
-    implementation rxAndroidLib
-    implementation livedataKtxLib
-    implementation viewModelKtxLib
 
 }

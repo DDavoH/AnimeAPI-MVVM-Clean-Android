@@ -8,7 +8,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -24,4 +24,61 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    compileSdkVersion = 30
+    versionCode = 1
+    versionName = "1.0"
+
+    //Basic
+    annotationLib = 'androidx.annotation:annotation:1.2.0'
+    kotlinLib =  "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    coreKtxLib =  'androidx.core:core-ktx:1.6.0'
+    appCompatLib = 'androidx.appcompat:appcompat:1.3.1'
+    materialLib = 'com.google.android.material:material:1.0.0'
+    constrainLayoutLib = 'androidx.constraintlayout:constraintlayout:2.0.4'
+    legacySupportLib = 'androidx.legacy:legacy-support-v4:1.0.0'
+    testJunitLib = 'junit:junit:4.13.2'
+    androidTestJunitLib = 'androidx.test.ext:junit:1.1.3'
+    testEspressoLib = 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //RXJAVA
+    rxAndroidLib = 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    rxJavaLIb = 'io.reactivex.rxjava3:rxjava:3.0.0'
+    rxRetrofitLib = 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    rxRoomLib = 'androidx.room:room-rxjava3:2.3.0'
+
+    //Hilt
+    daggerAndroidLib = 'com.google.dagger:hilt-android:2.38.1'
+    daggerCompilerLib = 'com.google.dagger:hilt-compiler:2.38.1'
+    // For instrumentation tests
+    daggerAndroidTestLib =  'com.google.dagger:hilt-android-testing:2.38.1'
+
+    //ViewModel
+    fragmentKtxLib = "androidx.fragment:fragment-ktx:1.3.5"
+    livedataKtxLib = 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    viewModelKtxLib = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+    //Retrofit
+    gsonLib = 'com.google.code.gson:gson:2.8.7'
+    retrofitLib = 'com.squareup.retrofit2:retrofit:2.9.0'
+    logginInterceptorLib = 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    gsonRetrofitLib = 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Room
+    roomCompilerLib = 'androidx.room:room-compiler:2.3.0'
+    roomRuntimeLib = 'androidx.room:room-runtime:2.3.0'
+
+    //NavigationComponent
+    navigationLib = 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    navigationUiLib = 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    // Feature module Support for Navigation Component
+    navigationDynamicLib = 'androidx.navigation:navigation-dynamic-features-fragment:2.3.5'
+
+    //Glide
+    glideLib = 'com.github.bumptech.glide:glide:4.12.0'
+    glideCompilerLib = 'com.github.bumptech.glide:compiler:4.12.0'
 }

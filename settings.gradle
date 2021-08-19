@@ -1,2 +1,7 @@
 rootProject.name = "AnimeAPI-MVVM-Clean"
 include ':app'
+include ':data'
+include ':domain'
+include ':usecases'
+include ':framework:databasemanager'
+include ':framework:requestmanager'
