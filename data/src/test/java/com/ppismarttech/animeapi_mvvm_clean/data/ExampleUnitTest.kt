@@ -1,4 +1,4 @@
-package com.ppismarttech.usecases
+package com.ppismarttech.animeapi_mvvm_clean.data
 
 import org.junit.Test
 

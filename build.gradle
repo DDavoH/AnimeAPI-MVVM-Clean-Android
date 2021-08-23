@@ -4,9 +4,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.2"
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
         // NOTE: Do not place your application dependencies here; they belong
@@ -38,7 +39,7 @@ ext{
     kotlinLib =  "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     coreKtxLib =  'androidx.core:core-ktx:1.6.0'
     appCompatLib = 'androidx.appcompat:appcompat:1.3.1'
-    materialLib = 'com.google.android.material:material:1.0.0'
+    materialLib = 'com.google.android.material:material:1.4.0'
     constrainLayoutLib = 'androidx.constraintlayout:constraintlayout:2.0.4'
     legacySupportLib = 'androidx.legacy:legacy-support-v4:1.0.0'
     testJunitLib = 'junit:junit:4.13.2'
@@ -54,8 +55,6 @@ ext{
     //Hilt
     daggerAndroidLib = 'com.google.dagger:hilt-android:2.38.1'
     daggerCompilerLib = 'com.google.dagger:hilt-compiler:2.38.1'
-    // For instrumentation tests
-    daggerAndroidTestLib =  'com.google.dagger:hilt-android-testing:2.38.1'
 
     //ViewModel
     fragmentKtxLib = "androidx.fragment:fragment-ktx:1.3.5"

@@ -1,7 +1,7 @@
 plugins {
+    id 'kotlin-kapt'
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
 
@@ -22,7 +22,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            shrinkResources false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -34,11 +39,14 @@ android {
     }
 }
 
-dependencies {
 
+
+dependencies {
     implementation project(":domain")
     implementation project(":data")
     implementation project(":usecases")
+    implementation project(":framework:requestmanager")
+    implementation project(":framework:databasemanager")
 
     implementation kotlinLib
     implementation coreKtxLib
@@ -58,14 +66,14 @@ dependencies {
     //Hilt
     implementation daggerAndroidLib
     kapt daggerCompilerLib
-    androidTestImplementation daggerAndroidTestLib
-    kaptAndroidTest daggerCompilerLib
-    testImplementation daggerAndroidTestLib
-    kaptTest daggerCompilerLib
 
     //ViewModel
-    implementation rxAndroidLib
+    implementation fragmentKtxLib
     implementation livedataKtxLib
     implementation viewModelKtxLib
 
+}
+
+kapt {
+    correctErrorTypes true
 }

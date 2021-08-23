@@ -1,4 +1,4 @@
-package com.ppismarttech.data
+package com.ppismarttech.animeapi_mvvm_clean.requestmanager
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ppismarttech.data.test", appContext.packageName)
+        assertEquals("com.ppismarttech.animeapi_mvvm_clean.requestmanager.test", appContext.packageName)
     }
 }

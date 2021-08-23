@@ -1,4 +1,4 @@
-package com.ppismarttech.requestmanager
+package com.ppismarttech.animeapi_mvvm_clean.requestmanager
 
 import org.junit.Test
 
