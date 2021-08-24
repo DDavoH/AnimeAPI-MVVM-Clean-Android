@@ -1,5 +1,6 @@
 package com.ppismarttech.animeapi_mvvm_clean
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,13 +15,20 @@ class MainViewModel @Inject constructor(private val getAnimes: GetAnimes):ViewMo
     private val _animeList = MutableLiveData<List<Anime>>()
     
     fun getAnimes() = getAnimes.invoke().subscribe({
-        _animeList.postValue(it)
+        Log.e(TAG, "getAnimes: codigo: $it")
+            it.let { animeList->
+                _animeList.postValue(animeList)
+            }
     },{
     
     })
     
     fun animeList(): LiveData<List<Anime>> {
         return _animeList
+    }
+    
+    companion object {
+        private const val TAG = "MainViewModel"
     }
     
 }

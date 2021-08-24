@@ -3,6 +3,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -36,6 +37,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures{
+        dataBinding = true
     }
 }
 
@@ -71,6 +75,10 @@ dependencies {
     implementation fragmentKtxLib
     implementation livedataKtxLib
     implementation viewModelKtxLib
+
+    //Glide
+    implementation glideLib
+    kapt glideCompilerLib
 
 }
 
