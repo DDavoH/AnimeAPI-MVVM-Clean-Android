@@ -22,14 +22,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        
+        viewModel.getAnimes()
+        configureRecyclerView()
+        observeData()
+    }
+    
+    private fun configureRecyclerView(){
         binding.rv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.rv.setHasFixedSize(true)
         binding.rv.adapter = adapter
-
-        
-        viewModel.getAnimes()
-        
+    }
+    
+    private fun observeData() {
         viewModel.animeList().observe(this,{ list->
             adapter.submitList(list)
         })

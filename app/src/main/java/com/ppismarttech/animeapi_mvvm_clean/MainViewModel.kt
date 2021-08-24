@@ -15,7 +15,6 @@ class MainViewModel @Inject constructor(private val getAnimes: GetAnimes):ViewMo
     private val _animeList = MutableLiveData<List<Anime>>()
     
     fun getAnimes() = getAnimes.invoke().subscribe({
-        Log.e(TAG, "getAnimes: codigo: $it")
             it.let { animeList->
                 _animeList.postValue(animeList)
             }
