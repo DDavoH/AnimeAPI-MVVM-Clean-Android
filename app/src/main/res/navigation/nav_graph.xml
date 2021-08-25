@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ppismarttech.animeapi_mvvm_clean.presentation.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="" >
+        <action
+            android:id="@+id/action_homeFragment_to_animeDetailsFragment"
+            app:destination="@id/animeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animeDetailsFragment"
+        android:name="com.ppismarttech.animeapi_mvvm_clean.presentation.animeDetails.AnimeDetailsFragment"
+        android:label=""
+        tools:layout="@layout/anime_details_fragment" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.ppismarttech.animeapi_mvvm_clean
+package com.ppismarttech.animeapi_mvvm_clean.presentation.home.adapters
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.ppismarttech.animeapi_mvvm_clean.R
 import com.ppismarttech.animeapi_mvvm_clean.databinding.RowAnimeBinding
 import com.ppismarttech.animeapi_mvvm_clean.domain.Anime
 
