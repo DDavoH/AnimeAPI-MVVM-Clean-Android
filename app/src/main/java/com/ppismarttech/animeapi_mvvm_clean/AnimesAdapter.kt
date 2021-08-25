@@ -35,6 +35,8 @@ class AnimesAdapter : ListAdapter<Anime, RecyclerView.ViewHolder>(DiffCallback()
         fun bind(item: Anime, position: Int) {
             Log.e(TAG, "bind: $item")
             binding.title.text = item.titles?.en
+            binding.description.text = item.descriptions?.en?:"Sin descripción".trim()
+            binding.score.text = "Calificación: ${item.score.toString()}"
             Glide.with(binding.root).load(item.cover_image).fitCenter().into(binding.image)
             
             binding.layout.setOnClickListener {
